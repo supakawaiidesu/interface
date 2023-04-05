@@ -5404,12 +5404,31 @@
   optionalDependencies:
     "@ethersproject/providers" "^5"
 
+"@web3-react/core@8.1.3-beta.0":
+  version "8.1.3-beta.0"
+  resolved "https://registry.yarnpkg.com/@web3-react/core/-/core-8.1.3-beta.0.tgz#92282e0a4881793a2a4cbbd1fea3a18dcbbc2a92"
+  integrity sha512-lgiPMR/rNvtWQJGARmNL810nqSEZJQExX1TKlvVA6mCXjb5/RHJxmS9i+j6mCT3D9E8wJITGMkc2bLtMM+LFMQ==
+  dependencies:
+    "@web3-react/store" "^8.1.2-beta.0"
+    "@web3-react/types" "^8.1.2-beta.0"
+    zustand "^4.3.5"
+  optionalDependencies:
+    "@ethersproject/providers" "^5"
+
 "@web3-react/eip1193@8.1.2-beta.0":
   version "8.1.2-beta.0"
   resolved "https://registry.yarnpkg.com/@web3-react/eip1193/-/eip1193-8.1.2-beta.0.tgz#ccab0860857b622461cd164259b8cf163c6d3ab9"
   integrity sha512-LU6ejYvscg04ziq6EiIKjJl6ou0X1knKu7ZtBjKAkoFjLyHO79WTe4ZL/JyFHxgy50OlcyiEiAEI2rghW95X5g==
   dependencies:
     "@web3-react/types" "^8.1.2-beta.0"
+
+"@web3-react/eip1193@8.1.3-beta.0":
+  version "8.1.3-beta.0"
+  resolved "https://registry.yarnpkg.com/@web3-react/eip1193/-/eip1193-8.1.3-beta.0.tgz#c69cea6caeddd044b39676629c1d67166bd6b70b"
+  integrity sha512-gmuMs7O0GIsp4T6XbW40+5cbhQYYd9uSGv464X+W1pE8f+QwSivu2T+zd2P1k075w/7prmYvZyblSNyLR1KpqQ==
+  dependencies:
+    "@web3-react/types" "^8.1.2-beta.0"
+    eventemitter3 "^4.0.7"
 
 "@web3-react/empty@8.1.2-beta.0":
   version "8.1.2-beta.0"
@@ -5471,6 +5490,15 @@
   version "8.1.2-beta.0"
   resolved "https://registry.yarnpkg.com/@web3-react/walletconnect/-/walletconnect-8.1.2-beta.0.tgz#c2716685aed59ad54467cc72292580acdb03976f"
   integrity sha512-m5m1jsho6mX6ChVtfe+vDVa50VTAxe8SjcayLY690z91N7hwAdvgMbqZoaR3yj0uHT7HzpB5ucYSfJ2FFSekbQ==
+  dependencies:
+    "@walletconnect/ethereum-provider" "^1.7.8"
+    "@web3-react/types" "^8.1.2-beta.0"
+    eventemitter3 "^4.0.7"
+
+"@web3-react/walletconnect@8.1.3-beta.0":
+  version "8.1.3-beta.0"
+  resolved "https://registry.yarnpkg.com/@web3-react/walletconnect/-/walletconnect-8.1.3-beta.0.tgz#4c65ad88c33ccd2a25d0d17e95d1c4a3524375d2"
+  integrity sha512-2RtZ7h0XqMFXuOu1nwSABKEM5mZ/OTrjKDhaf5qMAlf3fhuxIJOFkG2aHc9d55mOQ/zI2Bd5R5w4oFb4sePocA==
   dependencies:
     "@walletconnect/ethereum-provider" "^1.7.8"
     "@web3-react/types" "^8.1.2-beta.0"

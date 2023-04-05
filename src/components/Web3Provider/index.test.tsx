@@ -1,9 +1,6 @@
 import { act, render } from '@testing-library/react'
-import { initializeConnector } from '@web3-react/core'
+import { initializeConnector, MockEIP1193Provider } from '@web3-react/core'
 import { EIP1193 } from '@web3-react/eip1193'
-// TODO(INFRA-163): Export MockEIP1193Provider from @web3-react/eip1193 to facilitate testing.
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
-import { MockEIP1193Provider } from '@web3-react/eip1193/dist/mock'
 import { Provider as EIP1193Provider } from '@web3-react/types'
 import { Connection, ConnectionType } from 'connection'
 import useEagerlyConnect from 'hooks/useEagerlyConnect'
