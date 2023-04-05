@@ -51,6 +51,17 @@ const customRender = (ui: ReactElement) => render(ui, { wrapper: WithProviders }
 const customRenderHook = <Result, Props>(hook: (initialProps: Props) => Result) =>
   renderHook(hook, { wrapper: WithProviders })
 
+/**
+ * Casts the passed function as a jest.Mock.
+ * Use this in combination with jest.mock() to safely access function from mocked modules.
+ *
+ * @example
+ * import { useExample } from 'example'
+ * jest.mock('example', () => ({ useExample: jest.fn() }))
+ * beforeEach(() => {
+ *   asMock(useExample).mockImplementation(() => ...)
+ * })
+ */
 export function asMock<T extends (...args: any) => any>(fn: T) {
   const mock = fn as unknown as jest.Mock<ReturnType<T>, Parameters<T>>
   assert(mock.mock, 'fn is not a mock')
