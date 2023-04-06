@@ -1,5 +1,3 @@
-import { sendAnalyticsEvent } from '@uniswap/analytics'
-import { SwapEventName } from '@uniswap/analytics-events'
 import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { DEFAULT_TXN_DISMISS_MS, L2_TXN_DISMISS_MS } from 'constants/misc'
@@ -8,11 +6,9 @@ import { formatPercentInBasisPointsNumber, formatToDecimal, getTokenAddress } fr
 import { useCallback, useMemo } from 'react'
 import { useAppDispatch, useAppSelector } from 'state/hooks'
 import { InterfaceTrade } from 'state/routing/types'
-import { TransactionType } from 'state/transactions/types'
 import { computeRealizedPriceImpact } from 'utils/prices'
 
 import { L2_CHAIN_IDS } from '../../constants/chains'
-import { useDerivedSwapInfo } from '../../state/swap/hooks'
 import { useAddPopup } from '../application/hooks'
 import { checkedTransaction, finalizeTransaction } from './reducer'
 import { SerializableTransactionReceipt } from './types'
@@ -49,10 +45,6 @@ export default function Updater() {
   // speed up popup dismisall time if on L2
   const isL2 = Boolean(chainId && L2_CHAIN_IDS.includes(chainId))
   const transactions = useAppSelector((state) => state.transactions)
-  const {
-    trade: { trade },
-    allowedSlippage,
-  } = useDerivedSwapInfo()
 
   const dispatch = useAppDispatch()
   const onCheck = useCallback(
@@ -81,17 +73,6 @@ export default function Updater() {
 
       const tx = transactions[chainId]?.[hash]
 
-      if (tx.info.type === TransactionType.SWAP && trade) {
-        sendAnalyticsEvent(
-          SwapEventName.SWAP_TRANSACTION_COMPLETED,
-          formatAnalyticsEventProperties({
-            trade,
-            hash,
-            allowedSlippage,
-            succeeded: receipt.status === 1,
-          })
-        )
-      }
       addPopup(
         {
           txn: { hash },
@@ -100,7 +81,7 @@ export default function Updater() {
         isL2 ? L2_TXN_DISMISS_MS : DEFAULT_TXN_DISMISS_MS
       )
     },
-    [addPopup, allowedSlippage, dispatch, isL2, trade, transactions]
+    [addPopup, dispatch, isL2, transactions]
   )
 
   const pendingTransactions = useMemo(() => (chainId ? transactions[chainId] ?? {} : {}), [chainId, transactions])
