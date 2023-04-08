@@ -6,10 +6,11 @@ import { isAddress } from 'utils'
 import EthereumLogo from '../../assets/images/ethereum-logo.png'
 import BnbLogo from '../../assets/svg/bnb-logo.svg'
 import CeloLogo from '../../assets/svg/celo_logo.svg'
+import FtmLogo from '../../assets/svg/ftm-logo.svg'
 import MaticLogo from '../../assets/svg/matic-token-icon.svg'
 import { isCelo, NATIVE_CHAIN_ID, nativeOnChain } from '../../constants/tokens'
 
-type Network = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon' | 'smartchain'
+type Network = 'ethereum' | 'arbitrum' | 'optimism' | 'polygon' | 'smartchain' | 'fantom'
 
 export function chainIdToNetworkName(networkId: SupportedChainId): Network {
   switch (networkId) {
@@ -23,6 +24,8 @@ export function chainIdToNetworkName(networkId: SupportedChainId): Network {
       return 'polygon'
     case SupportedChainId.BNB:
       return 'smartchain'
+    case SupportedChainId.FANTOM:
+      return 'fantom'
     default:
       return 'ethereum'
   }
@@ -35,6 +38,8 @@ export function getNativeLogoURI(chainId: SupportedChainId = SupportedChainId.MA
       return MaticLogo
     case SupportedChainId.BNB:
       return BnbLogo
+    case SupportedChainId.FANTOM:
+      return FtmLogo
     case SupportedChainId.CELO:
     case SupportedChainId.CELO_ALFAJORES:
       return CeloLogo
@@ -50,6 +55,7 @@ function getTokenLogoURI(address: string, chainId: SupportedChainId = SupportedC
     SupportedChainId.MAINNET,
     SupportedChainId.OPTIMISM,
     SupportedChainId.BNB,
+    SupportedChainId.FANTOM,
   ]
   if (networksWithUrls.includes(chainId)) {
     return `https://raw.githubusercontent.com/Uniswap/assets/master/blockchains/${networkName}/assets/${address}/logo.png`
@@ -58,7 +64,7 @@ function getTokenLogoURI(address: string, chainId: SupportedChainId = SupportedC
   // Celo logo logo is hosted elsewhere.
   if (isCelo(chainId)) {
     if (address === nativeOnChain(chainId).wrapped.address) {
-      return 'https://raw.githubusercontent.com/ubeswap/default-token-list/master/assets/asset_CELO.png'
+      return 'https://ftmscan.com/token/images/wFtm_32.png'
     }
   }
 }

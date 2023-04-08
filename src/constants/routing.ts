@@ -15,6 +15,7 @@ import {
   DAI,
   DAI_ARBITRUM_ONE,
   DAI_BSC,
+  DAI_FANTOM,
   DAI_OPTIMISM,
   DAI_POLYGON,
   ETH_BSC,
@@ -35,6 +36,7 @@ import {
   USDC_ARBITRUM,
   USDC_ARBITRUM_GOERLI,
   USDC_BSC,
+  USDC_FANTOM,
   USDC_MAINNET,
   USDC_OPTIMISM,
   USDC_POLYGON,
@@ -95,6 +97,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDT_POLYGON,
     WETH_POLYGON,
   ],
+  [SupportedChainId.FANTOM]: [...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.FANTOM], DAI_FANTOM, USDC_FANTOM],
   [SupportedChainId.BNB]: [
     ...WRAPPED_NATIVE_CURRENCIES_ONLY[SupportedChainId.BNB],
     DAI_BSC,
@@ -189,6 +192,7 @@ export const COMMON_BASES: ChainCurrencyList = {
     PORTAL_USDC_CELO,
     CMC02_CELO,
   ],
+  [SupportedChainId.FANTOM]: [nativeOnChain(SupportedChainId.FANTOM), USDC_FANTOM, DAI_FANTOM],
   [SupportedChainId.CELO_ALFAJORES]: [
     nativeOnChain(SupportedChainId.CELO_ALFAJORES),
     CUSD_CELO_ALFAJORES,

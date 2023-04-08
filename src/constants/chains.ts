@@ -22,6 +22,9 @@ export enum SupportedChainId {
   CELO = 42220,
   CELO_ALFAJORES = 44787,
 
+  FANTOM_TESTNET = 4002,
+  FANTOM = 250,
+
   BNB = 56,
 }
 
@@ -31,8 +34,10 @@ export const CHAIN_IDS_TO_NAMES = {
   [SupportedChainId.POLYGON]: 'polygon',
   [SupportedChainId.POLYGON_MUMBAI]: 'polygon_mumbai',
   [SupportedChainId.CELO]: 'celo',
+  [SupportedChainId.FANTOM]: 'fantom',
   [SupportedChainId.CELO_ALFAJORES]: 'celo_alfajores',
   [SupportedChainId.ARBITRUM_ONE]: 'arbitrum',
+  [SupportedChainId.FANTOM_TESTNET]: 'fantom_testnet',
   [SupportedChainId.ARBITRUM_GOERLI]: 'arbitrum_goerli',
   [SupportedChainId.OPTIMISM]: 'optimism',
   [SupportedChainId.OPTIMISM_GOERLI]: 'optimism_goerli',
@@ -54,7 +59,9 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
   SupportedChainId.MAINNET,
   SupportedChainId.POLYGON,
   SupportedChainId.CELO,
+  SupportedChainId.FANTOM,
   SupportedChainId.OPTIMISM,
+  SupportedChainId.FANTOM_TESTNET,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.BNB,
 ] as const
@@ -75,6 +82,7 @@ export const TESTNET_CHAIN_IDS = [
   SupportedChainId.POLYGON_MUMBAI,
   SupportedChainId.ARBITRUM_GOERLI,
   SupportedChainId.OPTIMISM_GOERLI,
+  SupportedChainId.FANTOM_TESTNET,
 ] as const
 
 export type SupportedTestnetChainId = typeof TESTNET_CHAIN_IDS[number]
@@ -88,6 +96,8 @@ export const L1_CHAIN_IDS = [
   SupportedChainId.POLYGON,
   SupportedChainId.POLYGON_MUMBAI,
   SupportedChainId.CELO,
+  SupportedChainId.FANTOM,
+  SupportedChainId.FANTOM_TESTNET,
   SupportedChainId.CELO_ALFAJORES,
   SupportedChainId.BNB,
 ] as const

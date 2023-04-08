@@ -5,7 +5,6 @@ import { SupportedChainId } from 'constants/chains'
 import { ArrowUpRight } from 'react-feather'
 import styled from 'styled-components/macro'
 import { ExternalLink, HideSmall } from 'theme'
-import { colors } from 'theme/colors'
 import { useDarkModeManager } from 'theme/components/ThemeToggle'
 
 import { AutoRow } from '../Row'
@@ -33,9 +32,12 @@ const SHOULD_SHOW_ALERT = {
   [SupportedChainId.OPTIMISM_GOERLI]: true,
   [SupportedChainId.ARBITRUM_ONE]: true,
   [SupportedChainId.ARBITRUM_GOERLI]: true,
+  [SupportedChainId.FANTOM_TESTNET]: true,
   [SupportedChainId.POLYGON]: true,
   [SupportedChainId.POLYGON_MUMBAI]: true,
   [SupportedChainId.CELO]: true,
+  [SupportedChainId.FANTOM]: true,
+  [SupportedChainId.FANTOM_TESTNET]: true,
   [SupportedChainId.CELO_ALFAJORES]: true,
   [SupportedChainId.BNB]: true,
 }
@@ -58,6 +60,10 @@ const BG_COLORS_BY_DARK_MODE_AND_CHAIN_ID: {
       'radial-gradient(182.71% 150.59% at 2.81% 7.69%, rgba(240, 185, 11, 0.16) 0%, rgba(255, 168, 0, 0.16) 100%)',
     [SupportedChainId.OPTIMISM]:
       'radial-gradient(948% 292% at 42% 0%, rgba(255, 58, 212, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%),radial-gradient(98% 96% at 2% 0%, rgba(255, 39, 39, 0.01) 0%, rgba(235, 0, 255, 0.01) 96%)',
+    [SupportedChainId.FANTOM]:
+      'radial-gradient(948% 292% at 42% 0%, rgba(255, 58, 212, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%),radial-gradient(98% 96% at 2% 0%, rgba(255, 39, 39, 0.01) 0%, rgba(235, 0, 255, 0.01) 96%)',
+    [SupportedChainId.FANTOM_TESTNET]:
+      'radial-gradient(948% 292% at 42% 0%, rgba(255, 58, 212, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%),radial-gradient(98% 96% at 2% 0%, rgba(255, 39, 39, 0.01) 0%, rgba(235, 0, 255, 0.01) 96%)',
     [SupportedChainId.OPTIMISM_GOERLI]:
       'radial-gradient(948% 292% at 42% 0%, rgba(255, 58, 212, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%),radial-gradient(98% 96% at 2% 0%, rgba(255, 39, 39, 0.04) 0%, rgba(235, 0, 255, 0.01 96%)',
     [SupportedChainId.ARBITRUM_ONE]:
@@ -76,6 +82,10 @@ const BG_COLORS_BY_DARK_MODE_AND_CHAIN_ID: {
       'radial-gradient(182.71% 150.59% at 2.81% 7.69%, rgba(63, 208, 137, 0.15) 0%, rgba(49, 205, 50, 0.15) 100%)',
     [SupportedChainId.BNB]:
       'radial-gradient(182.71% 150.59% at 2.81% 7.69%, rgba(240, 185, 11, 0.16) 0%, rgba(255, 168, 0, 0.16) 100%)',
+    [SupportedChainId.FANTOM]:
+      'radial-gradient(948% 292% at 42% 0%, rgba(255, 58, 212, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%),radial-gradient(98% 96% at 2% 0%, rgba(255, 39, 39, 0.01) 0%, rgba(235, 0, 255, 0.01) 96%)',
+    [SupportedChainId.FANTOM_TESTNET]:
+      'radial-gradient(948% 292% at 42% 0%, rgba(255, 58, 212, 0.01) 0%, rgba(255, 255, 255, 0.04) 100%),radial-gradient(98% 96% at 2% 0%, rgba(255, 39, 39, 0.01) 0%, rgba(235, 0, 255, 0.01) 96%)',
     [SupportedChainId.OPTIMISM]:
       'radial-gradient(92% 105% at 50% 7%, rgba(255, 58, 212, 0.04) 0%, rgba(255, 255, 255, 0.03) 100%),radial-gradient(100% 97% at 0% 12%, rgba(235, 0, 255, 0.1) 0%, rgba(243, 19, 19, 0.1) 100%), hsla(0, 0%, 100%, 0.1)',
     [SupportedChainId.OPTIMISM_GOERLI]:
@@ -139,9 +149,11 @@ const TEXT_COLORS: { [chainId in NetworkAlertChains]: string } = {
   [SupportedChainId.CELO]: 'rgba(53, 178, 97)',
   [SupportedChainId.CELO_ALFAJORES]: 'rgba(53, 178, 97)',
   [SupportedChainId.OPTIMISM]: '#ff3856',
+  [SupportedChainId.FANTOM]: '#0490ed',
+  [SupportedChainId.FANTOM_TESTNET]: '#0490ed',
   [SupportedChainId.OPTIMISM_GOERLI]: '#ff3856',
   [SupportedChainId.ARBITRUM_ONE]: '#0490ed',
-  [SupportedChainId.BNB]: colors.gold400,
+  [SupportedChainId.BNB]: '#0490ed',
   [SupportedChainId.ARBITRUM_GOERLI]: '#0490ed',
 }
 

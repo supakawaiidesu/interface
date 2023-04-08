@@ -62,6 +62,7 @@ export const CHAIN_ID_TO_BACKEND_NAME: { [key: number]: Chain } = {
   [SupportedChainId.POLYGON]: Chain.Polygon,
   [SupportedChainId.POLYGON_MUMBAI]: Chain.Polygon,
   [SupportedChainId.CELO]: Chain.Celo,
+  [SupportedChainId.FANTOM]: Chain.Fantom,
   [SupportedChainId.CELO_ALFAJORES]: Chain.Celo,
   [SupportedChainId.ARBITRUM_ONE]: Chain.Arbitrum,
   [SupportedChainId.ARBITRUM_GOERLI]: Chain.Arbitrum,
@@ -80,8 +81,10 @@ const GQL_CHAINS: number[] = [
   SupportedChainId.MAINNET,
   SupportedChainId.OPTIMISM,
   SupportedChainId.POLYGON,
+  SupportedChainId.FANTOM,
   SupportedChainId.ARBITRUM_ONE,
   SupportedChainId.CELO,
+  SupportedChainId.FANTOM,
 ]
 
 export function isGqlSupportedChain(chainId: number | undefined): chainId is SupportedChainId {
@@ -111,6 +114,7 @@ const URL_CHAIN_PARAM_TO_BACKEND: { [key: string]: Chain } = {
   celo: Chain.Celo,
   arbitrum: Chain.Arbitrum,
   optimism: Chain.Optimism,
+  fantom: Chain.Fantom,
   bnb: Chain.Bnb,
 }
 
@@ -125,6 +129,7 @@ export const CHAIN_NAME_TO_CHAIN_ID: { [key in Chain]: SupportedChainId } = {
   [Chain.Polygon]: SupportedChainId.POLYGON,
   [Chain.Celo]: SupportedChainId.CELO,
   [Chain.Optimism]: SupportedChainId.OPTIMISM,
+  [Chain.Fantom]: SupportedChainId.FANTOM,
   [Chain.Arbitrum]: SupportedChainId.ARBITRUM_ONE,
   [Chain.UnknownChain]: SupportedChainId.MAINNET,
   [Chain.Bnb]: SupportedChainId.BNB,
@@ -134,7 +139,14 @@ export function fromGraphQLChain(chain: Chain): SupportedChainId {
   return CHAIN_NAME_TO_CHAIN_ID[chain]
 }
 
-export const BACKEND_CHAIN_NAMES: Chain[] = [Chain.Ethereum, Chain.Polygon, Chain.Optimism, Chain.Arbitrum, Chain.Celo]
+export const BACKEND_CHAIN_NAMES: Chain[] = [
+  Chain.Ethereum,
+  Chain.Polygon,
+  Chain.Optimism,
+  Chain.Arbitrum,
+  Chain.Celo,
+  Chain.Fantom,
+]
 
 export function getTokenDetailsURL({
   address,

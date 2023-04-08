@@ -4,9 +4,10 @@ import ethereumLogoUrl from 'assets/images/ethereum-logo.png'
 import polygonCircleLogoUrl from 'assets/images/polygonCircle.png'
 import { default as arbitrumCircleLogoUrl, default as arbitrumLogoUrl } from 'assets/svg/arbitrum_logo.svg'
 import bnbSquareLogoUrl from 'assets/svg/bnb_square_logo.svg'
-import bnbLogo from 'assets/svg/bnb-logo.svg'
 import celoLogo from 'assets/svg/celo_logo.svg'
 import celoSquareLogoUrl from 'assets/svg/celo_square_logo.svg'
+import ftmSquareLogoUrl from 'assets/svg/fantom_square_logo.svg'
+import bnbLogo from 'assets/svg/ftm-logo.svg'
 import optimismSquareLogoUrl from 'assets/svg/optimism_square_logo.svg'
 import optimismLogoUrl from 'assets/svg/optimistic_ethereum.svg'
 import polygonSquareLogoUrl from 'assets/svg/polygon_square_logo.svg'
@@ -101,6 +102,22 @@ const CHAIN_INFO: ChainInfoMap = {
     color: darkTheme.chain_10,
     backgroundColor: darkTheme.chain_10_background,
   },
+  [SupportedChainId.FANTOM_TESTNET]: {
+    networkType: NetworkType.L1,
+    blockWaitMsBeforeWarning: ms`10m`,
+    bridge: 'https://cbridge.celer.network/1/250',
+    docs: 'https://docs.fantom.foundation/',
+    explorer: 'https://ftmscan.com/',
+    infoLink: 'https://info.uniswap.org/#/ftm/',
+    label: 'Fantom Testnet',
+    logoUrl: bnbLogo,
+    circleLogoUrl: ftmSquareLogoUrl,
+    squareLogoUrl: ftmSquareLogoUrl,
+    nativeCurrency: { name: 'FTM', symbol: 'FTM', decimals: 18 },
+    defaultListUrl: PLASMA_BNB_LIST,
+    color: darkTheme.chain_42161,
+    backgroundColor: darkTheme.chain_42161_background,
+  },
   [SupportedChainId.OPTIMISM_GOERLI]: {
     networkType: NetworkType.L2,
     blockWaitMsBeforeWarning: ms`25m`,
@@ -184,6 +201,20 @@ const CHAIN_INFO: ChainInfoMap = {
     circleLogoUrl: celoCircleLogoUrl,
     squareLogoUrl: celoSquareLogoUrl,
     nativeCurrency: { name: 'Celo', symbol: 'CELO', decimals: 18 },
+    defaultListUrl: CELO_LIST,
+  },
+  [SupportedChainId.FANTOM]: {
+    networkType: NetworkType.L1,
+    blockWaitMsBeforeWarning: ms`10m`,
+    bridge: 'https://cbridge.celer.network/1/250',
+    docs: 'https://docs.celo.org/',
+    explorer: 'https://ftmscan.com/',
+    infoLink: 'https://info.uniswap.org/#/fantom/',
+    label: 'Fantom',
+    logoUrl: bnbLogo,
+    circleLogoUrl: ftmSquareLogoUrl,
+    squareLogoUrl: ftmSquareLogoUrl,
+    nativeCurrency: { name: 'FTM', symbol: 'FTM', decimals: 18 },
     defaultListUrl: CELO_LIST,
   },
   [SupportedChainId.CELO_ALFAJORES]: {

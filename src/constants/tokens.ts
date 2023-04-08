@@ -60,6 +60,20 @@ export const USDC_POLYGON = new Token(
   'USDC',
   'USD//C'
 )
+export const USDC_FANTOM = new Token(
+  SupportedChainId.FANTOM,
+  '0x04068da6c83afcfa0e13ba15a6696662335d5b75',
+  6,
+  'USDC',
+  'USD//C'
+)
+export const DAI_FANTOM = new Token(
+  SupportedChainId.FANTOM,
+  '0x8d11ec38a3eb5e956b052f67da8bdc9bef8abf3e',
+  18,
+  'DAI',
+  'Dai Stablecoin'
+)
 const USDC_POLYGON_MUMBAI = new Token(
   SupportedChainId.POLYGON_MUMBAI,
   '0xe11a86849d99f524cac3e7a0ec1241828e332c62',
@@ -382,6 +396,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     'WETH',
     'Wrapped Ether'
   ),
+  [SupportedChainId.FANTOM_TESTNET]: new Token(
+    SupportedChainId.FANTOM_TESTNET,
+    '0x07b9c47452c41e8e00f98ac4c075f5c443281d2a',
+    18,
+    'WFTM',
+    'Wrapped Fantom'
+  ),
   [SupportedChainId.ARBITRUM_GOERLI]: new Token(
     SupportedChainId.ARBITRUM_GOERLI,
     '0xe39Ab88f8A4777030A534146A9Ca3B52bd5D43A3',
@@ -423,6 +444,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId: number]: Token | undefined } =
     18,
     'WBNB',
     'Wrapped BNB'
+  ),
+  [SupportedChainId.FANTOM]: new Token(
+    SupportedChainId.FANTOM,
+    '0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83',
+    18,
+    'WFTM',
+    'Wrapped FTM'
   ),
 }
 
@@ -467,6 +495,10 @@ function isBsc(chainId: number): chainId is SupportedChainId.BNB {
   return chainId === SupportedChainId.BNB
 }
 
+function isFtm(chainId: number): chainId is SupportedChainId.FANTOM {
+  return chainId === SupportedChainId.FANTOM
+}
+
 class BscNativeCurrency extends NativeCurrency {
   equals(other: Currency): boolean {
     return other.isNative && other.chainId === this.chainId
@@ -482,6 +514,24 @@ class BscNativeCurrency extends NativeCurrency {
   public constructor(chainId: number) {
     if (!isBsc(chainId)) throw new Error('Not bnb')
     super(chainId, 18, 'BNB', 'BNB')
+  }
+}
+
+class FtmNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId
+  }
+
+  get wrapped(): Token {
+    if (!isFtm(this.chainId)) throw new Error('Not ftm')
+    const wrapped = WRAPPED_NATIVE_CURRENCY[this.chainId]
+    invariant(wrapped instanceof Token)
+    return wrapped
+  }
+
+  public constructor(chainId: number) {
+    if (!isFtm(chainId)) throw new Error('Not ftm')
+    super(chainId, 18, 'FTM', 'FTM')
   }
 }
 
@@ -509,6 +559,8 @@ export function nativeOnChain(chainId: number): NativeCurrency | Token {
     nativeCurrency = getCeloNativeCurrency(chainId)
   } else if (isBsc(chainId)) {
     nativeCurrency = new BscNativeCurrency(chainId)
+  } else if (isFtm(chainId)) {
+    nativeCurrency = new FtmNativeCurrency(chainId)
   } else {
     nativeCurrency = ExtendedEther.onChain(chainId)
   }
@@ -525,6 +577,7 @@ export const TOKEN_SHORTHANDS: { [shorthand: string]: { [chainId in SupportedCha
     [SupportedChainId.POLYGON]: USDC_POLYGON.address,
     [SupportedChainId.POLYGON_MUMBAI]: USDC_POLYGON_MUMBAI.address,
     [SupportedChainId.BNB]: USDC_BSC.address,
+    [SupportedChainId.FANTOM]: USDC_FANTOM.address,
     [SupportedChainId.CELO]: PORTAL_USDC_CELO.address,
     [SupportedChainId.CELO_ALFAJORES]: PORTAL_USDC_CELO.address,
     [SupportedChainId.GOERLI]: USDC_GOERLI.address,

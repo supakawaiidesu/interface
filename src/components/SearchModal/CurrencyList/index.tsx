@@ -23,7 +23,7 @@ import { LoadingRows, MenuItem } from '../styleds'
 import * as styles from './index.css'
 
 function currencyKey(currency: Currency): string {
-  return currency.isToken ? currency.address : 'ETHER'
+  return currency.isToken ? currency.address : 'FTM'
 }
 
 const CheckIcon = styled(Check)`

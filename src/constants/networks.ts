@@ -65,6 +65,16 @@ export const FALLBACK_URLS = {
     // "Fallback" URLs
     'https://rpc.ankr.com/optimism',
   ],
+  [SupportedChainId.FANTOM]: [
+    // "Safe" URLs
+    'https://rpc.ftm.tools/',
+    // "Fallback" URLs
+    'https://rpc.ankr.com/fantom',
+  ],
+  [SupportedChainId.FANTOM_TESTNET]: [
+    // "Safe" URLs
+    'https://rpc.ankr.com/fantom_testnet',
+  ],
   [SupportedChainId.OPTIMISM_GOERLI]: [
     // "Safe" URLs
     'https://goerli.optimism.io',
@@ -105,6 +115,10 @@ export const RPC_URLS = {
     `https://optimism-mainnet.infura.io/v3/${INFURA_KEY}`,
     ...FALLBACK_URLS[SupportedChainId.OPTIMISM],
   ],
+  [SupportedChainId.FANTOM_TESTNET]: [
+    `https://rpc.testnet.fantom.network`,
+    ...FALLBACK_URLS[SupportedChainId.FANTOM_TESTNET],
+  ],
   [SupportedChainId.OPTIMISM_GOERLI]: [
     `https://optimism-goerli.infura.io/v3/${INFURA_KEY}`,
     ...FALLBACK_URLS[SupportedChainId.OPTIMISM_GOERLI],
@@ -126,6 +140,7 @@ export const RPC_URLS = {
     ...FALLBACK_URLS[SupportedChainId.POLYGON_MUMBAI],
   ],
   [SupportedChainId.CELO]: FALLBACK_URLS[SupportedChainId.CELO],
+  [SupportedChainId.FANTOM]: FALLBACK_URLS[SupportedChainId.FANTOM],
   [SupportedChainId.CELO_ALFAJORES]: FALLBACK_URLS[SupportedChainId.CELO_ALFAJORES],
   [SupportedChainId.BNB]: [QUICKNODE_RPC_URL, ...FALLBACK_URLS[SupportedChainId.BNB]],
 }
