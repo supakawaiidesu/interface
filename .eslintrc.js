@@ -3,6 +3,7 @@
 require('@uniswap/eslint-config/load')
 
 module.exports = {
+  endOfLine: 'auto',
   extends: '@uniswap/eslint-config/react',
   overrides: [
     {
