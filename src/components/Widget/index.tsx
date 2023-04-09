@@ -6,7 +6,7 @@ import {
   SwapPriceUpdateUserResponse,
 } from '@uniswap/analytics-events'
 import { Trade } from '@uniswap/router-sdk'
-import { Currency, TradeType } from '@uniswap/sdk-core'
+import { Currency, TradeType } from '@unidexexchange/sdk-core'
 import {
   AddEthereumChainParameter,
   DialogAnimationType,

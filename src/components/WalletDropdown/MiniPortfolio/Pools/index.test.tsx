@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { SupportedChainId, WETH9 } from '@uniswap/sdk-core'
+import { SupportedChainId, WETH9 } from '@unidexexchange/sdk-core'
 import { FeeAmount, Pool, Position } from '@uniswap/v3-sdk'
 import { USDC_MAINNET } from 'constants/tokens'
 import { render } from 'test-utils'

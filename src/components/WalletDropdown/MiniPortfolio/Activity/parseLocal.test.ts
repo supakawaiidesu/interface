@@ -1,6 +1,6 @@
 // jest unit tests for the parseLocalActivity function
 
-import { SupportedChainId, Token, TradeType as MockTradeType } from '@uniswap/sdk-core'
+import { SupportedChainId, Token, TradeType as MockTradeType } from '@unidexexchange/sdk-core'
 import { DAI as MockDAI, USDC_MAINNET as MockUSDC_MAINNET } from 'constants/tokens'
 import { TokenAddressMap } from 'state/lists/hooks'
 import { WrappedTokenInfo } from 'state/lists/wrappedTokenInfo'

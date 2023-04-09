@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@unidexexchange/sdk-core'
 
 import { tryParsePrice } from './utils'
 

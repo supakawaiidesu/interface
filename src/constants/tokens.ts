@@ -1,4 +1,4 @@
-import { Currency, Ether, NativeCurrency, Token, WETH9 } from '@uniswap/sdk-core'
+import { Currency, Ether, NativeCurrency, Token, WETH9 } from '@unidexexchange/sdk-core'
 import { SupportedChainId } from 'constants/chains'
 import invariant from 'tiny-invariant'
 

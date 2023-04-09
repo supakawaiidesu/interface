@@ -1,4 +1,4 @@
-import { Price, Token } from '@uniswap/sdk-core'
+import { Price, Token } from '@unidexexchange/sdk-core'
 import {
   encodeSqrtRatioX96,
   FeeAmount,

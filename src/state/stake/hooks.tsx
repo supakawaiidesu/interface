@@ -1,6 +1,6 @@
 import { Interface } from '@ethersproject/abi'
+import { CurrencyAmount, Token } from '@unidexexchange/sdk-core'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { SupportedChainId } from 'constants/chains'

@@ -10,7 +10,7 @@ import {
   SwapEventName,
 } from '@uniswap/analytics-events'
 import { Trade } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@unidexexchange/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { sendEvent } from 'components/analytics'
 import Loader from 'components/Icons/LoadingSpinner'

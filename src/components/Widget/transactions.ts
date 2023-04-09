@@ -1,7 +1,7 @@
 import { sendAnalyticsEvent, useTrace } from '@uniswap/analytics'
 import { InterfaceEventName, InterfaceSectionName, SwapEventName } from '@uniswap/analytics-events'
 import { Trade } from '@uniswap/router-sdk'
-import { Currency, Percent } from '@uniswap/sdk-core'
+import { Currency, Percent } from '@unidexexchange/sdk-core'
 import {
   OnTxSuccess,
   TradeType,

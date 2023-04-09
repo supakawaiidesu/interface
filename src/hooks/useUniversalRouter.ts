@@ -5,7 +5,7 @@ import { SwapRouter, UNIVERSAL_ROUTER_ADDRESS } from '@unidexexchange/universal-
 import { sendAnalyticsEvent } from '@uniswap/analytics'
 import { SwapEventName } from '@uniswap/analytics-events'
 import { Trade } from '@uniswap/router-sdk'
-import { Currency, Percent, TradeType } from '@uniswap/sdk-core'
+import { Currency, Percent, TradeType } from '@unidexexchange/sdk-core'
 import { FeeOptions, toHex } from '@uniswap/v3-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { formatSwapSignedAnalyticsEventProperties } from 'lib/utils/analytics'

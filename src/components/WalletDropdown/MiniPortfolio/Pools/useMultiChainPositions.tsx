@@ -1,4 +1,4 @@
-import { CurrencyAmount, Token } from '@uniswap/sdk-core'
+import { CurrencyAmount, Token } from '@unidexexchange/sdk-core'
 import { abi as IUniswapV3PoolStateABI } from '@uniswap/v3-core/artifacts/contracts/interfaces/pool/IUniswapV3PoolState.sol/IUniswapV3PoolState.json'
 import { computePoolAddress, Pool, Position } from '@uniswap/v3-sdk'
 import { V3_CORE_FACTORY_ADDRESSES } from 'constants/addresses'

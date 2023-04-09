@@ -4562,6 +4562,18 @@
     "@typescript-eslint/types" "5.47.0"
     eslint-visitor-keys "^3.3.0"
 
+"@unidexexchange/sdk-core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@unidexexchange/sdk-core/-/sdk-core-1.1.0.tgz#d7fa3afe3d8f8c96b0c83960b952b35f48352648"
+  integrity sha512-KQEGpTKU9nuqY4ajHKAcpUXqalBYe17jGIMygXIErQBtq9bhXpcI9TSDbgwa0lJ1IYHqaEbZ4vfrocslPJn+RQ==
+  dependencies:
+    "@ethersproject/address" "^5.0.2"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.4"
+    tiny-invariant "^1.1.0"
+    toformat "^2.0.0"
+
 "@unidexexchange/universal-router-sdk@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@unidexexchange/universal-router-sdk/-/universal-router-sdk-1.1.1.tgz#766c74024b7db8246e09df26eb1ce6be11b789ef"
@@ -4671,7 +4683,7 @@
     "@uniswap/v2-sdk" "^3.0.1"
     "@uniswap/v3-sdk" "^3.8.3"
 
-"@uniswap/sdk-core@^3.0.0-alpha.3", "@uniswap/sdk-core@^3.0.1", "@uniswap/sdk-core@^3.1.0", "@uniswap/sdk-core@^3.2.0", "@uniswap/sdk-core@^3.2.2":
+"@uniswap/sdk-core@^3.0.0-alpha.3", "@uniswap/sdk-core@^3.0.1", "@uniswap/sdk-core@^3.1.0", "@uniswap/sdk-core@^3.2.0":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@uniswap/sdk-core/-/sdk-core-3.2.2.tgz#50dbc6f2543d088680f36fb61e01bb90d4d8fa71"
   integrity sha512-dPA34T8EVfFzKtw1NC1Mr7M0aXpY1UN+lUpdBv757JxKKMlGQTg96XTIfjYCflqEshxlBdz2+IVQgk6H+dMu5g==

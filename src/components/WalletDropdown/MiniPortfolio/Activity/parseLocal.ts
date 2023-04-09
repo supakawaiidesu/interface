@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 import { formatCurrencyAmount } from '@uniswap/conedison/format'
-import { Currency, CurrencyAmount, TradeType } from '@uniswap/sdk-core'
+import { Currency, CurrencyAmount, TradeType } from '@unidexexchange/sdk-core'
 import { nativeOnChain } from '@uniswap/smart-order-router'
 import { SupportedChainId } from 'constants/chains'
 import { TransactionPartsFragment, TransactionStatus } from 'graphql/data/__generated__/types-and-hooks'

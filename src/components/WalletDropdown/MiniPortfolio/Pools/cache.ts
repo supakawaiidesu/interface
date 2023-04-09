@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core'
+import { Token } from '@unidexexchange/sdk-core'
 import { Pool, Position } from '@uniswap/v3-sdk'
 import { SupportedChainId } from 'constants/chains'
 import { useAllTokensMultichain } from 'hooks/Tokens'

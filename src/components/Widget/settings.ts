@@ -1,4 +1,4 @@
-import { Percent } from '@uniswap/sdk-core'
+import { Percent } from '@unidexexchange/sdk-core'
 import { RouterPreference, Slippage, SwapController, SwapEventHandlers } from '@uniswap/widgets'
 import { DEFAULT_DEADLINE_FROM_NOW } from 'constants/misc'
 import { useCallback, useMemo, useState } from 'react'
