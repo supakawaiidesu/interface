@@ -1,5 +1,5 @@
-import { Trade } from '@uniswap/router-sdk'
 import { Currency, Percent, TradeType } from '@unidexexchange/sdk-core'
+import { Trade } from '@uniswap/router-sdk'
 import { PermitSignature } from 'hooks/usePermitAllowance'
 import { useMemo } from 'react'
 

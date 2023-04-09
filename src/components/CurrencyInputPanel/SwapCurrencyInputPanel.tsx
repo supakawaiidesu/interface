@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent } from '@unidexexchange/sdk-core'
 import { TraceEvent } from '@uniswap/analytics'
 import { BrowserEvent, InterfaceElementName, SwapEventName } from '@uniswap/analytics-events'
-import { Currency, CurrencyAmount, Percent } from '@unidexexchange/sdk-core'
 import { Pair } from '@uniswap/v2-sdk'
 import { useWeb3React } from '@web3-react/core'
 import { AutoColumn } from 'components/Column'

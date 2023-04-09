@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk'
 import { Currency, Percent } from '@unidexexchange/sdk-core'
+import { Protocol } from '@uniswap/router-sdk'
 import { FeeAmount } from '@uniswap/v3-sdk'
 import { RoutingDiagramEntry } from 'components/swap/SwapRoute'
 import { DAI, USDC_MAINNET, WBTC } from 'constants/tokens'

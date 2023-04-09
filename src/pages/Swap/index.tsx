@@ -1,4 +1,5 @@
 import { Trans } from '@lingui/macro'
+import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@unidexexchange/sdk-core'
 import { UNIVERSAL_ROUTER_ADDRESS } from '@unidexexchange/universal-router-sdk'
 import { sendAnalyticsEvent, Trace, TraceEvent } from '@uniswap/analytics'
 import {
@@ -10,7 +11,6 @@ import {
   SwapEventName,
 } from '@uniswap/analytics-events'
 import { Trade } from '@uniswap/router-sdk'
-import { Currency, CurrencyAmount, Percent, Token, TradeType } from '@unidexexchange/sdk-core'
 import { useWeb3React } from '@web3-react/core'
 import { sendEvent } from 'components/analytics'
 import Loader from 'components/Icons/LoadingSpinner'
