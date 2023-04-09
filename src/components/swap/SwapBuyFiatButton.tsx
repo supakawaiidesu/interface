@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro'
 import { TraceEvent } from '@uniswap/analytics'
-import { BrowserEvent, InterfaceElementName, SharedEventName } from '@uniswap/analytics-events'
+import { BrowserEvent, SharedEventName } from '@uniswap/analytics-events'
 import { useWeb3React } from '@web3-react/core'
 import { ButtonText } from 'components/Button'
 import { MouseoverTooltipContent } from 'components/Tooltip'
@@ -119,7 +119,7 @@ export default function SwapBuyFiatButton() {
           <TraceEvent
             events={[BrowserEvent.onClick]}
             name={SharedEventName.ELEMENT_CLICKED}
-            element={InterfaceElementName.FIAT_ON_RAMP_LEARN_MORE_LINK}
+            element={MOONPAY_REGION_AVAILABILITY_ARTICLE}
           >
             <ExternalLink href={MOONPAY_REGION_AVAILABILITY_ARTICLE} style={{ paddingLeft: '4px' }}>
               <Trans>Learn more</Trans>
@@ -133,7 +133,7 @@ export default function SwapBuyFiatButton() {
       <TraceEvent
         events={[BrowserEvent.onClick]}
         name={SharedEventName.ELEMENT_CLICKED}
-        element={InterfaceElementName.FIAT_ON_RAMP_BUY_BUTTON}
+        element={MOONPAY_REGION_AVAILABILITY_ARTICLE}
         properties={{ account_connected: !!account }}
       >
         <StyledTextButton onClick={handleBuyCrypto} disabled={buyCryptoButtonDisabled} data-testid="buy-fiat-button">
